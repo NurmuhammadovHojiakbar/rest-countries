@@ -2,23 +2,38 @@ import { useEffect, useState } from "react";
 import Configs from "../../config/config";
 import "./CountryCardList.css"
 import CountryCardItem from "../CountryCardItem/CountryCardItem"
+const Api = Configs.REST_COUNTRY_URL;
 
 const CountryCardList = ({ inputName, selectRegion }) => {
     const [ countryList, setCountryList ] = useState(null);
     const [ loader, setLoader ] = useState(false);
-    const API = Configs.REST_COUNTRY_URL + "all";
+    const [filterBy, setFilterBy] = useState("all")
+
+    
+    useEffect(()=>{
+        
+        if(inputName){
+            setFilterBy(`name/${inputName}`)
+        }else if(selectRegion){
+            setFilterBy(`region/${selectRegion}`)
+        }else{
+            setFilterBy("all")
+        }
+
+    },[selectRegion, inputName])
 
     useEffect(() =>{
-
         setLoader(true)
 
-        fetch(API)
-            .then(res => res.json())
-            .then(data =>{
-                setCountryList(data)
-                setLoader(false)
+        fetch(Api + filterBy)
+            .then(res => {
+                if(res.ok){
+                    return res.json()
+                }
             })
-    },[API])
+            .then(data =>setCountryList(data))
+            .finally(()=>setLoader(false))
+    },[filterBy])
 
     return (
         <section>
