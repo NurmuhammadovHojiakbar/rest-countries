@@ -17,6 +17,9 @@
 
 .country-card__link{
     color: #111517;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .country-card__flag{
@@ -26,6 +29,7 @@
 
 .country-card__info{
     padding: 24px 24px 46px;
+    margin-top: auto;
 }
 
 .country-card__title{
