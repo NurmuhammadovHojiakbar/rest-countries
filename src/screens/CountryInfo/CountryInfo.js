@@ -11,6 +11,7 @@ function CountryInfo() {
 
     const [ country, setCountry ] = useState(null);
     const [ loader, setLoader] = useState(false);
+    const [ err, setErr] = useState(false);
     const API = Configs.REST_COUNTRY_URL + "name/" + countryName;
     
     useEffect(()=>{
@@ -22,8 +23,9 @@ function CountryInfo() {
                 .then(res =>res.json())
                 .then(data =>{
                     setCountry(...data)
-                    setLoader(false)
                 })
+                .catch(err => setErr(err))
+                .finally(setLoader(false))
         },1000)
     },[API])
     
@@ -112,6 +114,8 @@ function CountryInfo() {
                         </div>
                     </div>
                 }
+
+                {err && <p style={{textAlign: "center"}}>Something went wrong...</p>}
             </div>
         </section>
     );

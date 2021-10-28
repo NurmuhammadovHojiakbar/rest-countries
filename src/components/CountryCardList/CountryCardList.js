@@ -7,6 +7,7 @@ const Api = Configs.REST_COUNTRY_URL;
 const CountryCardList = ({ inputName, selectRegion }) => {
     const [ countryList, setCountryList ] = useState(null);
     const [ loader, setLoader ] = useState(false);
+    const [err, setErr] = useState(false)
     const [filterBy, setFilterBy] = useState("all")
 
     
@@ -32,12 +33,15 @@ const CountryCardList = ({ inputName, selectRegion }) => {
                 }
             })
             .then(data =>setCountryList(data))
+            .catch(err =>setErr(err))
             .finally(()=>setLoader(false))
     },[filterBy])
 
     return (
         <section>
             <div className="container">
+                
+                {err && <p style={{textAlign: "center"}}>Something went wrong...</p>}
                 { loader? 
                     <p className="loading">Loading...</p> 
                     : 
