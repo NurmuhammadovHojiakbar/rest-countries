@@ -54,7 +54,7 @@ function CountryInfo() {
                     <div className="country-info__wrapper">
                         <img
                             className="country-info__wrapper-flag"
-                            src={country.flag? country.flag : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}
+                            src={country.flags.png? country.flags.png : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}
                             alt={country.name}
                             width="560"
                             height="400"
