@@ -1,0 +1,66 @@
+.dark-theme .site-header{
+    background-color: #2B3844;
+}
+
+.dark-theme .site-header path{
+    stroke: #fff;
+    fill: #fff;
+}
+.dark-theme .theme-changer{
+    color: #fff;
+}
+.site-header{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+
+.site-header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo{
+    flex-shrink: 1;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.site-logo__icon{
+    width: 100%;
+}
+
+.theme-changer{
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.theme-changer:active{
+    transform: scale(0.95);
+}
+
+.theme-changer:hover .theme-icon{
+    transform: rotate(-90deg);
+}
+
+.theme-icon{
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+    margin-right: 2px;
+}
+
+.theme-changer span{
+    white-space: nowrap;
+}

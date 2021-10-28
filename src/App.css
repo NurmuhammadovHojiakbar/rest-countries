@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+/* Font  */
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 300;
+    src:url("./assets/fonts/nunito-sans-v8-latin-300.woff2") format("woff2"), 
+        url("./assets/fonts/nunito-sans-v8-latin-300.woff") format("woff"); 
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 400;
+    src:url("./assets/fonts/nunito-sans-v8-latin-regular.woff2") format("woff2"), 
+        url("./assets/fonts/nunito-sans-v8-latin-regular.woff") format("woff"); 
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 600;
+    src:url("./assets/fonts/nunito-sans-v8-latin-600.woff2") format("woff2"), 
+        url("./assets/fonts/nunito-sans-v8-latin-600.woff") format("woff"); 
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 800;
+    src:url("./assets/fonts/nunito-sans-v8-latin-800.woff2") format("woff2"), 
+        url("./assets/fonts/nunito-sans-v8-latin-800.woff") format("woff"); 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body{
+    font-family: "Nunito Sans", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #111517;
+    background-color: #f2f2f2;
 }
 
-.App-link {
-  color: #61dafb;
+body.dark-theme{
+    background-color: #202C36;
+    color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1320px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
