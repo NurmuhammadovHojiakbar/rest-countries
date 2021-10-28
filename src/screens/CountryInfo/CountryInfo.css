@@ -94,6 +94,7 @@
 
 .country-info__text-wrapper dl{
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .border-wrapper{
@@ -125,4 +126,17 @@
     background-color: #fff;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
     border-radius: 2px;
+}
+
+@media only screen and (max-width:940px){
+    .country-info__wrapper{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .country-info__wrapper-flag{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
 }
