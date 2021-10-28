@@ -75,6 +75,7 @@
 .country-info__text{
     max-width: 600px;
     width: 100%;
+    margin-top: auto;
 }
 
 .country-info__title{
